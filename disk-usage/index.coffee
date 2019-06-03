@@ -43,7 +43,7 @@ if (serverDisksEnabled)
 localDisksAmount = "df -H | grep '/dev/' | grep -vE '#{exclude}' | wc -l | awk '{$1=$1};1'"
 localDisks = "df -#{if base10 then 'H' else 'h'} | grep '/dev/' | while read -r line; do fs=$(echo $line | awk '{print $1}'); name=$(diskutil info $fs | grep 'Volume Name' | awk '{print substr($0, index($0,$3))}'); echo $(echo $line | awk '{print $2, $3, $4, $5}') $(echo $name | awk '{print substr($0, index($0,$1))}'); done | grep -vE '#{exclude}'"
 
-command: localDisksAmount + ' && ' + localDisks +  serverDisksCmd
+command: localDisksAmount + ' && ' + localDisks + serverDisksCmd
 
 refreshFrequency: 60000 * 60 # 1h
 
@@ -176,10 +176,10 @@ renderInfo: (total, used, free, pctg, name) -> """
 update: (output, domEl) ->
   commands = output.split('\n')
 
-  localDisksAmount = commands[0]
+  localDisksAmount = parseInt(commands[0])
   localDisks = commands[1..localDisksAmount]
 
-  serverDisks = commands[localDisksAmount..]
+  serverDisks = commands[localDisksAmount+1..]
 
   $(domEl).html ''
 
