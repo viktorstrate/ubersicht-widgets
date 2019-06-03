@@ -1,0 +1,3 @@
+[submodule "simple-analog-clock"]
+	path = simple-analog-clock
+	url = git://github.com/viktorstrate/simple-analog-clock.git
