@@ -1,0 +1,11 @@
+{
+  "name": "ubersicht-widgets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:viktorstrate/ubersicht-widgets.git",
+  "author": "viktorstrate <viktorstrate@gmail.com>",
+  "private": false,
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
+}
