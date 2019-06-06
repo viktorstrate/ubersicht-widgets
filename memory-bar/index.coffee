@@ -17,7 +17,7 @@ style: """
   color #fff
   font-family Helvetica Neue
   background rgba(#fff, .1)
-  padding 10px 10px 15px
+  padding 8px 10px 15px
   border-radius 5px
 
   .container
@@ -41,6 +41,7 @@ style: """
 
   .widget-title
     font-size 10px
+    margin-bottom: 4px
     text-transform uppercase
     font-weight bold
 
