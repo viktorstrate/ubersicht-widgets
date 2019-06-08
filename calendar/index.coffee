@@ -5,7 +5,7 @@ getline; if (substr($0,1,2) == " 1") print "                    1 "; \
 do { prevline=$0; if (getline == 0) exit; print " " \
 substr(prevline,4,17) " " substr($0,1,2) " "; } while (1) }\' && date "+%-m %-d %y"'
 
-command: sundayFirstCalendar
+command: mondayFirstCalendar
 
 #Set this to true to enable previous and next month dates, or false to disable
 otherMonths: true
