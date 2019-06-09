@@ -2,11 +2,11 @@ import { styled } from 'uebersicht'
 
 import Graph from './Graph.jsx'
 
-export const refreshFrequency = 1000
+export const refreshFrequency = 2000
 export const command =
   "top -l 1 -n 0 | grep 'CPU usage' | awk '{print $3+0; print $5+0}' && sysctl -n hw.logicalcpu"
 
-export const MAX_DATA_POINTS = 250
+export const MAX_DATA_POINTS = 200
 
 export const initialState = {
   cpuHistory: [[0, 0]],
